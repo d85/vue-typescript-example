@@ -1,12 +1,13 @@
 <template>
   <div class="app">
-    <p>{{ jobs[0].location }}</p>
+    <JobsList :jobs="jobs"/>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import type Job from './types/Job'
+import JobsList from './components/JobsList.vue';
 
 const jobs = ref<Job[]>([
   { title: 'farm worker', location: 'lon lon ranch', salary: 30000, id: '1'},
